@@ -53,12 +53,21 @@
                 <div id="collapseOne" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">User:</h6>
-                        <a class="collapse-item" href="{{route ('department')}}">Department</a>
                         <a class="collapse-item" href="{{ route('facultylist')}}">Faculty</a>
                         <a class="collapse-item" href="{{ route('studentlist')}}">Student</a>
                         <a class="collapse-item" href="{{ route('newregister')}}">Pending Student</a>
                     </div>
                 </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route ('department')}}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Departemnt</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{ route ('course')}}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Course Assign</span></a>
             </li>
 
             <li class="nav-item active">

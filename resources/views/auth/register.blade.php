@@ -61,7 +61,14 @@
 
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="semester" value="{{ old('semester') }}" placeholder="Semester" name="semester">
+                                            <select class="form-control" name="semester">
+                                                <option>Select Semester</option>
+                                                <option>Summer</option>
+                                                <option>Fall</option>
+                                                <option>Spring</option>
+
+                                            </select>
+                                            <!-- <input type="text" class="form-control form-control-user" id="semester" value="{{ old('semester') }}" placeholder="Semester" name="semester"> -->
                                             @if($errors->has('semester'))
                                             <div class="alert alert-danger">{{ $errors->first('semester')}}</div>
                                             @endif

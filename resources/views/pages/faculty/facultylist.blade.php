@@ -40,7 +40,7 @@
                         <tr>
                             <td>{{$item->name}}</td>
                             <td>{{$item->f_id}}</td>
-                            <td>{{$item->department}}</td>
+                            <td>{{$item->department?->name}}</td>
                             <td>{{$item->room_no}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->email}}</td>

@@ -3,6 +3,7 @@
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ApproveController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\NewRegisterController;
 use App\Http\Controllers\Auth\RegisterController;
+use GuzzleHttp\Promise\Create;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,7 +73,9 @@ Route::get('/department/delete/{id}',[DepartmentController::class,'delete'])->na
 Route::get('/semester',[DepartmentController::class,'semester'])->name('semester');
 
 //course
-Route::get('/course',[DepartmentController::class,'course'])->name('course');
+Route::get('/course',[CourseController::class,'course'])->name('course');
+Route::get('/course/create',[CourseController::class,'create'])->name('course.create');
+Route::post('/course/store',[CourseController::class,'store'])->name('course.store');
 
 
 //research

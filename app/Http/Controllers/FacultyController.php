@@ -14,7 +14,7 @@ class FacultyController extends Controller
     public function faculty()
     {
 
-        $allfaculty = Faculty::all();
+        $allfaculty = Faculty::with('department')->get();
 
         return view('pages.faculty.facultylist', compact('allfaculty'));
     }

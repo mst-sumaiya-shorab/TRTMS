@@ -12,7 +12,7 @@
     <div class="card shadow mb-4">
         <div class="card-header py-3 ">
             <h6 class="m-0 font-weight-bold text-primary">DataTab</h6>
-            <form action="{{ route('department.create')}}" method="get">
+            <form action="{{ route('course.create')}}" method="get">
                 <button type="submit" class="btnf btn-primary btn-user btn-block">
                     Add
                 </button>
@@ -24,19 +24,25 @@
                     <thead>
 
                         <tr>
-                            <th>Course</th>
+                            <th>Student-ID</th>
+                            <th>Course-Code</th>
+                            <th>Semester</th>
+                            <th>Year</th>
                             <th>Status</th>
                             
                         </tr>
                     </thead>
 
                     <tbody>
-                   
+                    @foreach($allcourse as $item)
                        <tr>
-                        <td>name</td>
-                        <td>status</td>
+                        <td>{{$item->student?->s_id}}</td>
+                        <td>{{$item->course_id}}</td>
+                        <td>{{$item->semester}}</td>
+                        <td>{{$item->year}}</td>
+                        <td>{{$item->status}}</td>
                        </tr>
-                       
+                       @endforeach
                     </tbody>
                 </table>
             </div>

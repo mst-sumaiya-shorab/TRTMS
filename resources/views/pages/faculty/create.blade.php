@@ -39,8 +39,9 @@
                                 @foreach($departments as $department)
                                 <option value="{{ $department->id }}">{{ $department->name }}</option>
                                 @endforeach
+
                             </select>
-                            <!-- <input type="text" class="form-control form-control-user" id="department" value="{{ old('department') }}" placeholder="Department" name="department"> -->
+                           
                             @if($errors->has('department_id'))
                             <div class="alert alert-danger">{{ $errors->first('department_id')}}</div>
                             @endif
