@@ -48,7 +48,7 @@
                             <td>{{$item->s_id}}</td>
                             <td>{{$item->semester}}</td>
                             <td>{{$item->course}}</td>
-                            <td>{{$item->department}}</td>
+                            <td>{{$item->department?->name}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->email}}</td>
                             <td>

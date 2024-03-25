@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Course</h1>
+    <h1 class="h3 mb-2 text-gray-800">Pending practicum student list</h1>
     <!-- <p class="mb-4">All faculty list who are taking thesis and practicum course</p> -->
 
     <!-- DataTales Example -->
@@ -20,10 +20,12 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
 
                         <tr>
+                            <th>Student ID</th>
                             <th>Course-Code</th>
                             <th>Semester</th>
                             <th>Year</th>
@@ -34,16 +36,23 @@
                     </thead>
 
                     <tbody>
-                        @foreach($allcourse as $item)
+                        @foreach($practicums as $item)
                         <tr>
-                          
+
+                            <td>{{$item->s_id}}</td>
                             <td>{{$item->course_id}}</td>
                             <td>{{$item->semester}}</td>
-                            <td>{{$item->year}}</td>  
+                            <td>{{$item->year}}</td>
                             <td>{{$item->title}}</td>
-                            <td>{{$item->status}}</td>
+                            <td>
+                                <button type="submit" class="btnn btn-primary btn-user btn-block">
+                                    Approved
+                                </button>
+                            </td>
+
                         </tr>
                         @endforeach
+
                     </tbody>
                 </table>
             </div>

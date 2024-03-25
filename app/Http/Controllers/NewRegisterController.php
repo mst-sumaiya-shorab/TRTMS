@@ -13,8 +13,9 @@ class NewRegisterController extends Controller
     {
 
         $allnewregister = Member::where('status', 'deactive')->get();
-
-        return view('pages.newregister.newregister', compact('allnewregister'));
+        return view('pages.newregister.newregister', compact('allnewregister')); 
+        
+        $allnewregister = Member::with('department')->get();
     }
 
     public function create()

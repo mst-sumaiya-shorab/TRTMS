@@ -14,12 +14,12 @@
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">DataTab</h6>
             <form action="{{ route('student.create')}}" method="get">
-            <button type="submit" href="{{ route('student.create')}}" class="btns btn-primary btn-user btn-block">
-                Add
-            </button>
+                <button type="submit" href="{{ route('student.create')}}" class="btns btn-primary btn-user btn-block">
+                    Add
+                </button>
             </form>
         </div>
-    
+
         <div class="card-body">
             <div class="table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -29,13 +29,42 @@
                             <th>Faculty Name</th>
                             <th>Student List</th>
                             <th>Course</th>
-                            <th>Thesis or Research title</th>                        
+                            <th>Thesis or Research title</th>
                             <th>Status</th>
                         </tr>
+                        <tr>
+                            <td rowspan="4">Faculty Name</td>
+                            <td>Student ID</td>
+                            <td>Course</td>
+                            <td>Thesis or Research title</td>
+                            <td>Status</td>
+                        </tr>
+                        <tr>
+                            
+                            <td>Student ID</td>
+                            <td>Course</td>
+                            <td>Thesis or Research title</td>
+                            <td>Status</td>
+                        </tr>
+                        <tr>
+                         
+                            <td>Student ID</td>
+                            <td>Course</td>
+                            <td>Thesis or Research title</td>
+                            <td>Status</td>
+                        </tr>
+                        <tr>
+                         
+                            <td>Student ID</td>
+                            <td>Course</td>
+                            <td>Thesis or Research title</td>
+                            <td>Status</td>
+                        </tr>
+                        
                     </thead>
 
                     <tbody>
-                      
+
 
                     </tbody>
                 </table>

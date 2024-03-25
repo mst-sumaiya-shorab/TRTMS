@@ -5,13 +5,13 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Course</h1>
+    <h1 class="h3 mb-2 text-gray-800">Practicum Student list</h1>
     <!-- <p class="mb-4">All faculty list who are taking thesis and practicum course</p> -->
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3 ">
-            <h6 class="m-0 font-weight-bold text-primary">DataTab</h6>
+            <!-- <h6 class="m-0 font-weight-bold text-primary">DataTab</h6> -->
             <form action="{{ route('course.create')}}" method="get">
                 <button type="submit" class="btnf btn-primary btn-user btn-block">
                     Add
@@ -24,6 +24,7 @@
                     <thead>
 
                         <tr>
+                            <th>Student ID</th>
                             <th>Course-Code</th>
                             <th>Semester</th>
                             <th>Year</th>
@@ -34,16 +35,16 @@
                     </thead>
 
                     <tbody>
-                        @foreach($allcourse as $item)
+
                         <tr>
-                          
-                            <td>{{$item->course_id}}</td>
-                            <td>{{$item->semester}}</td>
-                            <td>{{$item->year}}</td>  
-                            <td>{{$item->title}}</td>
-                            <td>{{$item->status}}</td>
+                            <td>s_id</td>
+                            <td>course_id</td>
+                            <td>semester</td>
+                            <td>year</td>
+                            <td>title</td>
+                            <td>status</td>
                         </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>

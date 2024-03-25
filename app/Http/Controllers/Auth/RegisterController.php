@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Models\Admin;
 use App\Models\Member;
+use App\Models\Department;
 use App\Http\Requests\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -15,7 +16,8 @@ class RegisterController extends Controller
 {
     public function register()
     {
-        return view('auth.register');
+        $data['departments'] = Department::all();
+        return view('auth.register', $data);
     }
 
     public function registerform(Request $request)
@@ -25,7 +27,7 @@ class RegisterController extends Controller
         $s_id = $request->s_id;
         $semester = $request->semester;
         $course = $request->course;
-        $department = $request->department;
+        $department_id = $request->department_id;
         $phone = $request->phone;
         $email = $request->email;
         $password = $request->password;
@@ -36,7 +38,7 @@ class RegisterController extends Controller
             's_id'=>'required',
             'semester'=>'required',
             'course'=>'required',
-            'department' => 'required',
+            'department_id' => 'required',
             'phone' => 'required',
             'email' => 'required',
             'password' => 'required',

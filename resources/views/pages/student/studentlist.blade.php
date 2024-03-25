@@ -30,6 +30,7 @@
                             <th>ID</th>
                             <th>Semester</th>
                             <th>Course</th>
+                            <th>Department</th>
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Status</th>
@@ -43,6 +44,7 @@
                             <td>{{$item->s_id}}</td>
                             <td>{{$item->semester}}</td>
                             <td>{{$item->course}}</td>
+                            <td>{{$item->department?->name}}</td>
                             <td>{{$item->phone}}</td>
                             <td>{{$item->email}}</td>
                             <td>{{$item->status}}</td>

@@ -25,6 +25,7 @@ class StudentController extends Controller
         $s_id = $request->s_id;
         $semester = $request->semester;
         $course =$request->course;
+        $department_id=$request->department_id;
         $phone = $request->phone;
         $email = $request->email;
         // $status = $request->status;
@@ -35,6 +36,7 @@ class StudentController extends Controller
             's_id'=>'required',
             'semester' => 'required',
             'course' => 'required',
+            'department_id'=>'required',
             'phone' => 'required',
             'email' => 'required',
             // 'status' => 'required',

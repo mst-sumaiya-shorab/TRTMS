@@ -37,26 +37,6 @@ class AuthController extends Controller
         }
 
         $data = $request->only(['email', 'password']);
-        $faculty = Faculty::where('email', $request->email)->first();
-
-        if ($faculty->status != 'active') {
-            return back()->with(['message' => 'You are not active, contact with administrator', 'alert' => 'danger']);
-        }
-        if ($request->type == 'faculty') {
-              Auth::guard('member')->logout();
-             if (Auth::guard('faculty')->attempt(['email' => $email, 'password' => $password])) {
-                 Session::flash('success', 'Login Successful');
-                 return redirect()->route('Dashboard');
-             }
-             return "afds";
-            }
-     
-           
-        
-        
-
-       
-        $data = $request->only(['email', 'password']);
         $user = Member::where('email', $request->email)->first();
 
         if ($user->status != 'active') {
@@ -66,6 +46,22 @@ class AuthController extends Controller
         if (Auth::guard('member')->attempt(['email' => $email, 'password' => $password])) {
             Session::flash('success', 'Login Successful');
             return redirect()->route('Dashboard');
+        }
+        
+        // faculty
+        $data = $request->only(['email', 'password']);
+        $faculty = Faculty::where('email', $request->email)->first();
+
+        // if ($faculty->status != 'active') {
+        //     return back()->with(['message' => 'You are not active, contact with administrator', 'alert' => 'danger']);
+        // }
+        if ($request->type == 'faculty') {
+            Auth::guard('member')->logout();
+            if (Auth::guard('faculty')->attempt(['email' => $email, 'password' => $password])) {
+                Session::flash('success', 'Login Successful');
+                return redirect()->route('Dashboard');
+            }
+            return "afds";
         }
     }
     public function logout()

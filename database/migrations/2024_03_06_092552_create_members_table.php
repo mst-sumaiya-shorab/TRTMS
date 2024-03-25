@@ -17,7 +17,7 @@ return new class extends Migration
             $table->bigInteger('s_id');
             $table->string('semester');
             $table->string('course');
-            $table->string('department');
+            $table->string('department_id');
             $table->string('phone');
             $table->string('email');
             $table->string('password');

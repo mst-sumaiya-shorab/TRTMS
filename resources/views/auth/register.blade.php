@@ -83,9 +83,15 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <input type="text" class="form-control form-control-user" id="department" value="{{ old('department') }}" placeholder="Department" name="department">
-                                        @if($errors->has('department'))
-                                        <div class="alert alert-danger">{{ $errors->first('department')}}</div>
+                                        <select class="form-control" name="department_id">
+                                            <option>Select Departemnt</option>
+                                            @foreach($departments as $department)
+                                            <option value="{{ $department->id }}">{{ $department->name }}</option>
+                                            @endforeach
+
+                                        </select>
+                                        @if($errors->has('department_id'))
+                                        <div class="alert alert-danger">{{ $errors->first('department_id')}}</div>
                                         @endif
                                     </div>
                                     <div class="form-group">

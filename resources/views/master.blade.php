@@ -59,19 +59,37 @@
                     </div>
                 </div>
             </li>
+
+            <li class="nav-item active">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Course</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Student:</h6>
+                        <a class="collapse-item" href="{{ route('thesis')}}">Thesis</a>
+                        <a class="collapse-item" href="{{ route('newthesis')}}">Pending Thesis</a>
+                        <a class="collapse-item" href="{{ route('practicum')}}">Practicum</a>
+                        <a class="collapse-item" href="{{ route('newpracticum')}}">Pending Practicum</a>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route ('course')}}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Course and Title Choose</span></a>
+            </li>
+
             <li class="nav-item active">
                 <a class="nav-link" href="{{route ('department')}}">
                     <i class="fas fa-file-alt"></i>
                     <span>Departemnt</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ route ('course')}}">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Course Assign</span></a>
-            </li>
+            
 
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route ('Dashboard')}}">
+                <a class="nav-link" href="{{ route ('research')}}">
                     <i class="fas fa-file-alt"></i>
                     <span>Research</span></a>
             </li>
@@ -103,7 +121,7 @@
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Components</span>
@@ -115,7 +133,7 @@
                         <a class="collapse-item" href="cards.html">Cards</a>
                     </div>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Nav Item - Utilities Collapse Menu -->
             <li class="nav-item">

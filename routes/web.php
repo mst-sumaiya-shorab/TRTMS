@@ -1,19 +1,23 @@
 <?php
 
+use App\Models\Thesis;
+use App\Models\Practicum;
+use GuzzleHttp\Promise\Create;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\ThesisController;
 use App\Http\Controllers\ApproveController;
 use App\Http\Controllers\FacultyController;
 use App\Http\Controllers\StudentController;
 use App\Http\Controllers\ResearchController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PracticumController;
 use App\Http\Controllers\DepartmentController;
 use App\Http\Controllers\NewRegisterController;
 use App\Http\Controllers\Auth\RegisterController;
-use GuzzleHttp\Promise\Create;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,6 +81,11 @@ Route::get('/course',[CourseController::class,'course'])->name('course');
 Route::get('/course/create',[CourseController::class,'create'])->name('course.create');
 Route::post('/course/store',[CourseController::class,'store'])->name('course.store');
 
+//thesis and practicum
+Route::get('/course/thesis',[ThesisController::class,'thesis'])->name('thesis');
+Route::get('/course/pending-thesis',[ThesisController::class,'newthesis'])->name('newthesis');
+Route::get('/course/practicum',[PracticumController::class,'practicum'])->name('practicum');
+Route::get('/course/pending-practicum',[PracticumController::class,'newpracticum'])->name('newpracticum');
 
 //research
 Route::get('/research',[ResearchController::class,'research'])->name('research');

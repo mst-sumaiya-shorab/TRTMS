@@ -5,7 +5,7 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Course</h1>
+    <h1 class="h3 mb-2 text-gray-800">Thesis Student list</h1>
     <!-- <p class="mb-4">All faculty list who are taking thesis and practicum course</p> -->
 
     <!-- DataTales Example -->
@@ -24,6 +24,7 @@
                     <thead>
 
                         <tr>
+                            <th>Student ID</th>
                             <th>Course-Code</th>
                             <th>Semester</th>
                             <th>Year</th>
@@ -34,16 +35,16 @@
                     </thead>
 
                     <tbody>
-                        @foreach($allcourse as $item)
+
                         <tr>
-                          
-                            <td>{{$item->course_id}}</td>
-                            <td>{{$item->semester}}</td>
-                            <td>{{$item->year}}</td>  
-                            <td>{{$item->title}}</td>
-                            <td>{{$item->status}}</td>
+                            <td>s_id</td>
+                            <td>course_id</td>
+                            <td>semester</td>
+                            <td>year</td>
+                            <td>title</td>
+                            <td>status</td>
                         </tr>
-                        @endforeach
+
                     </tbody>
                 </table>
             </div>
