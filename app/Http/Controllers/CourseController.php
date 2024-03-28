@@ -36,9 +36,10 @@ class CourseController extends Controller
             'title' => 'required',
             'year' => 'required',
         ]);
+        
         $data = $request->all();
         $data['s_id'] = auth('member')->user()->s_id;
-        // auth('member')->user()->name
+        
         unset($data['_token']);
         Course::create($data);
 

@@ -24,6 +24,7 @@
                     <thead>
 
                         <tr>
+                            <th>Student ID</th>
                             <th>Course-Code</th>
                             <th>Semester</th>
                             <th>Year</th>
@@ -36,7 +37,7 @@
                     <tbody>
                         @foreach($allcourse as $item)
                         <tr>
-                          
+                          <td>{{$item->s_id}}</td>
                             <td>{{$item->course_id}}</td>
                             <td>{{$item->semester}}</td>
                             <td>{{$item->year}}</td>  

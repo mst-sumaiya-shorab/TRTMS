@@ -6,15 +6,15 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 text-gray-800">Student List</h1>
+    <h1 class="h3 mb-2 text-gray-800">Research enroll list</h1>
     <p class="mb-4">The thesis and research enroll student list.</p>
 
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">DataTab</h6>
-            <form action="{{ route('student.create')}}" method="get">
-                <button type="submit" href="{{ route('student.create')}}" class="btns btn-primary btn-user btn-block">
+            <form action="{{ route('research.create')}}" method="get">
+                <button type="submit" href="{{ route('research.create')}}" class="btns btn-primary btn-user btn-block">
                     Add
                 </button>
             </form>
@@ -30,6 +30,8 @@
                             <th>Student List</th>
                             <th>Course</th>
                             <th>Thesis or Research title</th>
+                            <th>Semester</th>
+                            <th>Year</th>
                             <th>Status</th>
                         </tr>
                         <tr>
@@ -37,6 +39,8 @@
                             <td>Student ID</td>
                             <td>Course</td>
                             <td>Thesis or Research title</td>
+                            <td>Semester</td>
+                            <td>Year</td>
                             <td>Status</td>
                         </tr>
                         <tr>
@@ -44,6 +48,8 @@
                             <td>Student ID</td>
                             <td>Course</td>
                             <td>Thesis or Research title</td>
+                            <td>Semester</td>
+                            <td>Year</td>
                             <td>Status</td>
                         </tr>
                         <tr>
@@ -51,6 +57,8 @@
                             <td>Student ID</td>
                             <td>Course</td>
                             <td>Thesis or Research title</td>
+                            <td>Semester</td>
+                            <td>Year</td>
                             <td>Status</td>
                         </tr>
                         <tr>
@@ -58,6 +66,8 @@
                             <td>Student ID</td>
                             <td>Course</td>
                             <td>Thesis or Research title</td>
+                            <td>Semester</td>
+                            <td>Year</td>
                             <td>Status</td>
                         </tr>
                         

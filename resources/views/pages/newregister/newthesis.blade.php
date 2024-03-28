@@ -20,6 +20,13 @@
         </div>
         <div class="card-body">
             <div class="table-responsive">
+
+                @if(Session::has('accept'))
+                <div class="alert alert-success">
+                    {{ Session::get('accept') }}
+                </div>
+                @endif
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
 
@@ -42,14 +49,22 @@
                             <td>{{$item->semester}}</td>
                             <td>{{$item->year}}</td>
                             <td>{{$item->title}}</td>
+
                             <td>
+                                <form action="{{ route('accept', $item->id)}}" method="get">
+                                    <div class="statu-box">
+                                    <select class="form-control" name="faculty_id">
 
-                                <button type="submit" class="btnn btn-primary btn-user btn-block">
-                                    Approved
-                                </button>
-
-
+                                        <option>Select Faculty</option>
+                                        @foreach($faculties as $faculty)
+                                        <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                     @endforeach
+                                    </select>
+                                    <div class="iconss"> <a href="#"><i class="far fa-save"></i> </a></div>
+                                    </div>
+                                </form>
                             </td>
+
                         </tr>
                         @endforeach
 

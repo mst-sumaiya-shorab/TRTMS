@@ -21,6 +21,12 @@
         <div class="card-body">
             <div class="table-responsive">
 
+                @if(Session::has('accepte'))
+                <div class="alert alert-success">
+                    {{ Session::get('accepte') }}
+                </div>
+                @endif
+
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
 
@@ -45,9 +51,13 @@
                             <td>{{$item->year}}</td>
                             <td>{{$item->title}}</td>
                             <td>
-                                <button type="submit" class="btnn btn-primary btn-user btn-block">
-                                    Approved
-                                </button>
+
+                                <form action="{{ route('accepte', $item->id)}}" method="get">
+                                    <button type="submit" class="btnn btn-primary btn-user btn-block">
+                                        Approved
+                                    </button>
+                                </form>
+
                             </td>
 
                         </tr>

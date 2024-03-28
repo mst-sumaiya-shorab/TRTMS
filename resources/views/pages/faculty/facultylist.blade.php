@@ -45,13 +45,13 @@
                             <td>{{$item->phone}}</td>
                             <td>{{$item->email}}</td>
                             <td>
-                            <div class="iconss">
+                                <div class="iconss">
                                     <a href="{{ route('newregister.create')}}"> <i class="fas fa-eye"></i></a>
                                     <a href="{{ route('newregister.create')}}"><i class="fas fa-edit"></i></a>
                                     <a href="{{ route('newregister.create')}}"><i class="fas fa-trash-alt"></i></a>
                                 </div>
                             </td>
-                            
+
                         </tr>
                         @endforeach
 

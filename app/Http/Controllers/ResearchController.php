@@ -11,4 +11,7 @@ class ResearchController extends Controller
     {
         return view('pages.research.researchlist');
     }
+    public function create(){
+        return view('pages.research.create');
+    }
 }

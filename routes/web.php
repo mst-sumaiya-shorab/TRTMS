@@ -5,6 +5,7 @@ use App\Models\Practicum;
 use GuzzleHttp\Promise\Create;
 use Illuminate\Auth\Events\Logout;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\ThesisController;
@@ -31,12 +32,12 @@ use App\Http\Controllers\Auth\RegisterController;
 */
 
 Route::get('/admin', [AdminController::class, 'index']);
-Route::get('/', [DashboardController::class, 'deshboard'])->name('Dashboard');
+Route::get('/dashboard', [DashboardController::class, 'deshboard'])->name('Dashboard');
 
 Route::get('/register',[RegisterController::class,'register'])->name('register');
 Route::post('/register-form',[RegisterController::class,'registerform'])->name('admin.register');
 
-Route::get('/login',[AuthController::class,'login'])->name('login');
+Route::get('/',[AuthController::class,'login'])->name('login');
 Route::post('/login_form',[AuthController::class,'loginform'])->name('admin.login');
 
 Route::get('/logout',[AuthController::class,'logout'])->name('Logout');
@@ -62,6 +63,9 @@ Route::get('/delete',[NewRegisterController::class,'delete'])->name('delete');
 
 //approved
 Route::get('/approve/{id}',[ApproveController::class,'approve'])->name('approve');
+Route::get('/accept/{id}',[ApproveController::class,'accept'])->name('accept');
+Route::get('/accepte/{id}',[ApproveController::class,'accepte'])->name('accepte');
+
 
 //department
 Route::get('/department',[DepartmentController::class,'department'])->name('department');
@@ -89,3 +93,8 @@ Route::get('/course/pending-practicum',[PracticumController::class,'newpracticum
 
 //research
 Route::get('/research',[ResearchController::class,'research'])->name('research');
+Route::get('/research/create',[ResearchController::class,'create'])->name('research.create');
+Route::get('/research/store',[ResearchController::class,'store'])->name('research.store');
+
+//task
+Route::get('/task',[TaskController::class,'task'])->name('task');

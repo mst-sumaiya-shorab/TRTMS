@@ -36,15 +36,17 @@
 
                     <tbody>
 
+                        @foreach($allpracticum as $item)
+                        
                         <tr>
-                            <td>s_id</td>
-                            <td>course_id</td>
-                            <td>semester</td>
-                            <td>year</td>
-                            <td>title</td>
-                            <td>status</td>
+                            <td>{{$item->s_id}}</td>
+                            <td>{{$item->course_id}}</td>
+                            <td>{{$item->semester}}</td>
+                            <td>{{$item->year}}</td>
+                            <td>{{$item->title}}</td>
+                            <td>{{$item->status}}</td>
                         </tr>
-
+                        @endforeach
                     </tbody>
                 </table>
             </div>

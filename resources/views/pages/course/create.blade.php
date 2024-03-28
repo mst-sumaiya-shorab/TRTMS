@@ -17,6 +17,13 @@
                     <form action="{{ route('course.store') }}" method="post">
                         @csrf
 
+                        <div class="form-group">
+                            <input type="text" class="form-control form-control-user" id="s_id" value="{{auth('member')->user()->s_id}}" name="s_id">
+                            
+                            @if($errors->has('s_id'))
+                            <div class="alert alert-danger">{{ $errors->first('s_id')}}</div>
+                            @endif
+                        </div>
                         <div class="form-group row">
                             <div class="col-sm-4 mb-3 mb-sm-0">
                                 <select class="form-control" name="course_id">
@@ -25,7 +32,7 @@
                                     <option>Practicum</option>
                                 </select>
 
-                                
+
                                 @if($errors->has('course_id'))
                                 <div class="alert alert-danger">{{ $errors->first('course_id')}}</div>
                                 @endif

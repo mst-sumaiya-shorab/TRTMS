@@ -8,5 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Course extends Model
 {
     protected $guarded = ['id'];
+
+    
+    public function member()
+    {
+        return $this->belongsTo(Member::class);
+    }
   
 }
