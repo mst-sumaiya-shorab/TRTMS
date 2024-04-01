@@ -63,7 +63,6 @@ Route::get('/delete',[NewRegisterController::class,'delete'])->name('delete');
 
 //approved
 Route::get('/approve/{id}',[ApproveController::class,'approve'])->name('approve');
-Route::get('/accept/{id}',[ApproveController::class,'accept'])->name('accept');
 Route::get('/accepte/{id}',[ApproveController::class,'accepte'])->name('accepte');
 
 
@@ -94,7 +93,7 @@ Route::get('/course/pending-practicum',[PracticumController::class,'newpracticum
 //research
 Route::get('/research',[ResearchController::class,'research'])->name('research');
 Route::get('/research/create',[ResearchController::class,'create'])->name('research.create');
-Route::get('/research/store',[ResearchController::class,'store'])->name('research.store');
+Route::post('/research/store',[ResearchController::class,'store'])->name('research.store');
 
 //task
 Route::get('/task',[TaskController::class,'task'])->name('task');

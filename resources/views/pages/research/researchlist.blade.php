@@ -34,43 +34,24 @@
                             <th>Year</th>
                             <th>Status</th>
                         </tr>
+                        @foreach($allassigncourse as $key => $item)
+                           @if($key % 4 == 0)
                         <tr>
-                            <td rowspan="4">Faculty Name</td>
-                            <td>Student ID</td>
-                            <td>Course</td>
-                            <td>Thesis or Research title</td>
-                            <td>Semester</td>
-                            <td>Year</td>
-                            <td>Status</td>
+                        <td rowspan="4">{{ $item->faculty?->name }}</td>
+                            @endif
+
+                            <td>{{ $item->s_id }}</td>
+                            <td>{{ $item->course_id }}</td>
+                            <td>{{ $item->title }}</td>
+                            <td>{{ $item->semester }}</td>
+                            <td>{{ $item->year }}</td>
+                            <td>{{ $item->status }}</td>
+                            @if(($key + 1) % 4 == 0)
                         </tr>
-                        <tr>
-                            
-                            <td>Student ID</td>
-                            <td>Course</td>
-                            <td>Thesis or Research title</td>
-                            <td>Semester</td>
-                            <td>Year</td>
-                            <td>Status</td>
+                        @endif
                         </tr>
-                        <tr>
-                         
-                            <td>Student ID</td>
-                            <td>Course</td>
-                            <td>Thesis or Research title</td>
-                            <td>Semester</td>
-                            <td>Year</td>
-                            <td>Status</td>
-                        </tr>
-                        <tr>
-                         
-                            <td>Student ID</td>
-                            <td>Course</td>
-                            <td>Thesis or Research title</td>
-                            <td>Semester</td>
-                            <td>Year</td>
-                            <td>Status</td>
-                        </tr>
-                        
+
+                        @endforeach
                     </thead>
 
                     <tbody>

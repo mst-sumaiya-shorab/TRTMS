@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Course;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
-use App\Models\Faculty;
 use App\Models\Thesis;
+use App\Models\Faculty;
+use Illuminate\Http\Request;
+use PhpParser\Node\Expr\Assign;
+use App\Http\Controllers\Controller;
+use App\Models\Assign_course;
 
 class ThesisController extends Controller
 {
@@ -24,8 +26,5 @@ class ThesisController extends Controller
         $data['faculties'] = Faculty::all();
         return view('pages.newregister.newthesis', $data);
 
-    }
-    public function store(){
-        
     }
 }

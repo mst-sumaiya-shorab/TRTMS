@@ -27,44 +27,70 @@
                 </div>
                 @endif
 
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
+                <form action="{{ route('research.store')}}" method="post">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
 
-                        <tr>
-                            <th>Student ID</th>
-                            <th>Course-Code</th>
-                            <th>Semester</th>
-                            <th>Year</th>
-                            <th>Title</th>
-                            <th>Status</th>
+                            <tr>
+                                <th>Student ID</th>
+                                <th>Course-Code</th>
+                                <th>Semester</th>
+                                <th>Year</th>
+                                <th>Title</th>
+                                <th>Faculty</th>
 
-                        </tr>
-                    </thead>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        @foreach($practicums as $item)
-                        <tr>
+                        <tbody>
+                            <form action="{{ route('research.store')}}" method="post">
 
-                            <td>{{$item->s_id}}</td>
-                            <td>{{$item->course_id}}</td>
-                            <td>{{$item->semester}}</td>
-                            <td>{{$item->year}}</td>
-                            <td>{{$item->title}}</td>
-                            <td>
+                                @foreach($practicums as $key => $item)
+                                @csrf
+                                <tr>
 
-                                <form action="{{ route('accepte', $item->id)}}" method="get">
-                                    <button type="submit" class="btnn btn-primary btn-user btn-block">
-                                        Approved
-                                    </button>
-                                </form>
+                                    <td>{{$item->s_id}}
+                                        <input type="hidden" name="s_id[]" value="{{ $item->s_id }}">
+                                    </td>
+                                    <td>{{$item->course_id}}
+                                        <input type="hidden" name="course_id[]" value="{{ $item->course_id }}">
+                                    </td>
+                                    <td>{{$item->semester}}
+                                        <input type="hidden" name="semester[]" value="{{ $item->semester }}">
+                                    </td>
+                                    <td>{{$item->year}}
+                                        <input type="hidden" name="year[]" value="{{ $item->year }}">
+                                    </td>
+                                    <td>{{$item->title}}
+                                        <input type="hidden" name="title[]" value="{{ $item->title }}">
+                                    </td>
+                                    <td>
 
-                            </td>
+                                        <div class="statu-box">
+                                            <select class="form-control" name="f_id[]">
 
-                        </tr>
-                        @endforeach
+                                                <option>Select Faculty</option>
+                                                @foreach($faculties as $faculty)
+                                                <option value="{{$faculty->id}}">{{$faculty->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
 
-                    </tbody>
-                </table>
+                                    </td>
+
+                                </tr>
+                                @endforeach
+
+
+
+
+                        </tbody>
+                    </table>
+
+                    <button type="submit" class="btnn btn-primary btn-user btn-block">
+                        Submit
+                    </button>
+                </form>
             </div>
 
         </div>

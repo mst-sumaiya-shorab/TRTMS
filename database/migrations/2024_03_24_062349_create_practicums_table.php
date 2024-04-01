@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('semester');
             $table->integer('year');
             $table->string('title');
-            $table->string('status')->default('active');
+            $table->string('status')->default('deactive');
             $table->timestamps();
         });
     }
