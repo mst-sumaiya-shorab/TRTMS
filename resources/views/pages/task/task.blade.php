@@ -31,17 +31,17 @@
             <div class="table-responsive border">
                 task details:
             </div>
-            <div class=" conyainer ">
+            <div class=" container ">
                 <div class="icon-t">
                     <i class="fas fa-upload"></i>
                     
-                      <p class="">  Upload</p>
+                      <p class="text-dark">Upload</p>
                     
                 </div>
                 <div class="icon-t">
                     <i class="fas fa-link"></i>
                     
-                    <p>    Link</p>
+                    <p class="text-dark">Link</p>
                     
                 </div>
                 <div class="">

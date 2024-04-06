@@ -60,6 +60,12 @@
                 </div>
             </li>
 
+
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route ('course')}}">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Course and Title Choose</span></a>
+            </li>
             <li class="nav-item active">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-users"></i>
@@ -68,36 +74,43 @@
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Student:</h6>
-                        <a class="collapse-item" href="{{ route('thesis')}}">Thesis</a>
+
                         <a class="collapse-item" href="{{ route('newthesis')}}">Pending Thesis</a>
-                        <a class="collapse-item" href="{{ route('practicum')}}">Practicum</a>
+
                         <a class="collapse-item" href="{{ route('newpracticum')}}">Pending Practicum</a>
                     </div>
                 </div>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{route ('course')}}">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Course and Title Choose</span></a>
-            </li>
-
-            <li class="nav-item active">
                 <a class="nav-link" href="{{route ('department')}}">
                     <i class="fas fa-file-alt"></i>
                     <span>Departemnt</span></a>
             </li>
-            
+
 
             <li class="nav-item active">
-                <a class="nav-link" href="{{ route ('research')}}">
-                    <i class="fas fa-file-alt"></i>
-                    <span>Research</span></a>
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsethree" aria-expanded="true" aria-controls="collapsethree">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Faculty Assign List</span>
+                </a>
+                <div id="collapsethree" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">User:</h6>
+                        <a class="collapse-item" href="{{ route('thesislist')}}">Thesis</a>
+                        <a class="collapse-item" href="{{ route('practicumlist')}}">Practicum</a>
+                    </div>
+                </div>
             </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="#">
                     <i class="fas fa-fw fa-solid fa-user"></i>
                     <span>Profile</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="{{route('task')}}">
+                    <i class="fas fa-fw fa-solid fa-user"></i>
+                    <span>Task</span></a>
             </li>
 
             <li class="nav-item active">

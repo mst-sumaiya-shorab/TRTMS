@@ -34,31 +34,35 @@
                             <th>Year</th>
                             <th>Status</th>
                         </tr>
-                        @foreach($allassigncourse as $key => $item)
-                           @if($key % 4 == 0)
-                        <tr>
-                        <td rowspan="4">{{ $item->faculty?->name }}</td>
-                            @endif
-
-                            <td>{{ $item->s_id }}</td>
-                            <td>{{ $item->course_id }}</td>
-                            <td>{{ $item->title }}</td>
-                            <td>{{ $item->semester }}</td>
-                            <td>{{ $item->year }}</td>
-                            <td>{{ $item->status }}</td>
-                            @if(($key + 1) % 4 == 0)
-                        </tr>
-                        @endif
-                        </tr>
-
-                        @endforeach
                     </thead>
-
                     <tbody>
+                    @foreach($practicums as $key => $item)
+                           @if(count($item->assigncourse) == 0)
+                              @continue
+                           @endif
 
+                        <tr>
+                            <td rowspan="{{ count($item->assigncourse) + 1}}">{{ $item->name }}</td>
+                        </tr>
+                        @foreach($item->assigncourse as $key => $course)
+                        <tr>
 
-                    </tbody>
-                </table>
+                            <td>{{ $course->s_id }}</td>
+                            <td>{{ $course->course_id }}</td>
+                            <td>{{ $course->title }}</td>
+                            <td>{{ $course->semester }}</td>
+                            <td>{{ $course->year }}</td>
+                            <td>{{ $course->status }}</td>
+
+                        </tr>
+                        @endforeach
+
+                    @endforeach
+
+                </tbody>
+            
+              </table>
+
             </div>
             <div class="row ">
                 <div class="col-sm-12 col-md-5">

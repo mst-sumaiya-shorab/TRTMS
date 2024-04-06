@@ -2,18 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Assign_course;
+use App\Models\Course;
 use App\Models\Faculty;
 use Illuminate\Http\Request;
+use App\Models\Assign_course;
+use App\Http\Controllers\Controller;
 
 class ResearchController extends Controller
 {
-    public function research()
+    public function thesislist()
     {
-        $allassigncourse = Assign_course::all(); 
+        
+        // $data['theses'] = Assign_course::where('course_id', 'Thesis')->get();
+        $data['theses'] = Faculty::with(['courseassign' => function($q){
+            $q->where('course_id', 'Thesis');
+        }])->get();
         $data['faculties'] = Faculty::all();
-        return view('pages.research.researchlist', compact('allassigncourse'), $data);
+        return view('pages.research.thesislist', $data);
+       
+    }
+    public function practicumlist()
+    {
+        // $data['practicums'] = Assign_course::where('course_id', 'Practicum')->get();
+        $data['practicums'] = Faculty::with(['assigncourse' => function($q){
+            $q->where('course_id', 'Practicum');
+        }])->get();
+        $data['faculties'] = Faculty::all();
+        return view('pages.research.practicumlist', $data);
        
     }
     public function create()
@@ -61,8 +76,10 @@ class ResearchController extends Controller
             $student['f_id'] = $request->f_id[$i];
             $student['status'] = 'active';
             Assign_course::create($student);
+
+            $student = [];
         }
 
-        return redirect()->route('research');
+        return redirect()->back();
     }
 }

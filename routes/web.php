@@ -91,7 +91,9 @@ Route::get('/course/practicum',[PracticumController::class,'practicum'])->name('
 Route::get('/course/pending-practicum',[PracticumController::class,'newpracticum'])->name('newpracticum');
 
 //research
-Route::get('/research',[ResearchController::class,'research'])->name('research');
+
+Route::get('/research/thesislist',[ResearchController::class,'thesislist'])->name('thesislist');
+Route::get('/research/practicumlist',[ResearchController::class,'practicumlist'])->name('practicumlist');
 Route::get('/research/create',[ResearchController::class,'create'])->name('research.create');
 Route::post('/research/store',[ResearchController::class,'store'])->name('research.store');
 

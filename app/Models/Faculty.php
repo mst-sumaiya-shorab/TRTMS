@@ -17,5 +17,12 @@ class Faculty extends Model
         return $this->belongsTo(Department::class);
     }
 
-    
+    function courseassign()
+    {
+        return $this->hasMany(Assign_course::class, 'f_id', 'id');
+    }
+    function assigncourse()
+    {
+        return $this->hasMany(Assign_course::class, 'f_id', 'id');
+    }
 }
