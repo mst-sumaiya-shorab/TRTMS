@@ -40,8 +40,7 @@
                 </div>
                 <div class="icon-t">
                     <i class="fas fa-link"></i>
-                    
-                    <p class="text-dark">Link</p>
+                     <p class="text-dark">Link</p>
                     
                 </div>
                 <div class="">

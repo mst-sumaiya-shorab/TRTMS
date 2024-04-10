@@ -112,6 +112,11 @@
                     <i class="fas fa-fw fa-solid fa-user"></i>
                     <span>Task</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-solid fa-user"></i>
+                    <span>Communication</span></a>
+            </li>
 
             <li class="nav-item active">
                 <a class="nav-link" href="index.html">
